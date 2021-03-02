@@ -1,21 +1,27 @@
-const { response } = require("express");
+const { json } = require("body-parser");
+const express = require("express");
 const supertest = require("supertest");
-// describe("POST /auth/login", () => {
-//     test("Creates a new post in the database", async () => {
-//       const user = {
-//         title: "first user",
-//         body: "hello world",
-//       };
-//       const response = await request(app).post("/auth/login").send(user);
-  
-//       expect(response.status).toBe(201);
-//       expect(response.body.message).toBe("user created");
-//     });
-//   });
+const app = require('../../app.js');
 
 // describe("/", () => {
-//  test("gets the / route", async () => {
-//     expect(response).toBe("fuck off");
+//  test("/", async () => {    
+
+//     await request(app).post("/").send(data() {
+//         return {
+//             expect(response).toBe(200)
+//         }
+//     },);
+  
+//     // expect(response.body.message).toBe("HELLO WORLD");
 //  })
 // })
+describe('GET /', () => {
+    test('Responds with 200 status code and a message', async () => {
+      const response = await request(app).get('/');
+  
+      expect(response.status).toBe(200);
+      expect(response.body.message).toEqual('Bonjour, mon ami');
+    });
+  });
+
 

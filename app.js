@@ -7,18 +7,52 @@ app.use(bodyParser.json());
 
 
 // importing routes
-const postsRoute = require('./routes/posts');
+// const postsRoute = require('./routes/posts');
+// app.use('/posts', postsRoute);
+// db model
+// class Note extends Model {
+//     static get tableName() {
+//       return "notes";
+//     }
+//   }
+// routes
+app.get('/' , (req,res) => {
+    res.send('my server');
+});
 
-app.use('/posts', postsRoute);
-
-
-// // routes
-// app.get('/' , (req,res) => {
-//     res.send('my server');
-// });
 // app.get('/posts' , (req,res) => {
 //     res.send('my server posts');
 // });
+// app.get("/", async (req, res) => {
+//     let message = "hello world!";
+  
+//     message = message.toUpperCase();
+  
+//     res.status(200).json({ message });
+//   });
+//   app.get('/', (req, res) => {
+//     res.status(200).json({
+//       error: false,
+//       message: 'Bonjour, mon ami',
+//     });
+//   });
+// router.post('/posts', async (req, res) => {
+//     const post = new Post({
+//         title: req.body.title,
+//         description: req.body.description
+//     });
+//     try{
+//     const savedPost = await post.save();
+//     res.json(savedPost);
+//     }
+//     catch (err) {
+//         res.json({message: err});
+//     }
+// })
+
+
+
+
 
 // db connection
 mongoose.connect(process.env.DB_CONNECTION,
@@ -27,10 +61,5 @@ mongoose.connect(process.env.DB_CONNECTION,
 
      console.log('db connected')
 )
-
-
-
-
-
 
 app.listen(3000);
