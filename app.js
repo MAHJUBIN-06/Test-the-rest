@@ -12,13 +12,13 @@ const postsRoute = require('./routes/posts');
 app.use('/posts', postsRoute);
 
 
-// routes
-app.get('/' , (req,res) => {
-    res.send('my server');
-});
-app.get('/posts' , (req,res) => {
-    res.send('my server posts');
-});
+// // routes
+// app.get('/' , (req,res) => {
+//     res.send('my server');
+// });
+// app.get('/posts' , (req,res) => {
+//     res.send('my server posts');
+// });
 
 // db connection
 mongoose.connect(process.env.DB_CONNECTION,
@@ -27,7 +27,6 @@ mongoose.connect(process.env.DB_CONNECTION,
 
      console.log('db connected')
 )
-
 
 
 
