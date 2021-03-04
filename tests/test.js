@@ -1,7 +1,7 @@
 const { json } = require("body-parser");
 const express = require("express");
 const supertest = require("supertest");
-const app = require('../../app.js');
+const app = require('../app');
 
 // describe("/", () => {
 //  test("/", async () => {    
@@ -16,12 +16,12 @@ const app = require('../../app.js');
 //  })
 // })
 describe('GET /', () => {
-    test('Responds with 200 status code and a message', async () => {
-      const response = await request(app).get('/');
-  
-      expect(response.status).toBe(200);
-      expect(response.body.message).toEqual('Bonjour, mon ami');
-    });
+  test('Responds with 200 status code and a message', async () => {
+    const response = await request(app).get('/');
+
+    expect(response.status).toBe(200);
+    expect(response.body.message).toEqual('HELLO WORLD');
   });
+});
 
 

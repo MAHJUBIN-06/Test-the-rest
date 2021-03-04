@@ -9,16 +9,19 @@ app.use(bodyParser.json());
 // importing routes
 // const postsRoute = require('./routes/posts');
 // app.use('/posts', postsRoute);
-// db model
-// class Note extends Model {
-//     static get tableName() {
-//       return "notes";
-//     }
-//   }
+
 // routes
-app.get('/' , (req,res) => {
-    res.send('my server');
+// app.get('/' , (req,res) => {
+//     res.send('my server');
+// });
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+      error: false,
+      message: 'HELLO WORLD',
+    });
 });
+  
 
 // app.get('/posts' , (req,res) => {
 //     res.send('my server posts');
