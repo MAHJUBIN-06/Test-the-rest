@@ -2,26 +2,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-
-
-// importing routes
-// const postsRoute = require('./routes/posts');
-// app.use('/posts', postsRoute);
-
-// routes
-// app.get('/' , (req,res) => {
-//     res.send('my server');
-// });
+// const bodyParser = require('body-parser');
 
 app.get('/', (req, res) => {
-    res.status(200).json({
-      error: false,
-      message: 'HELLO WORLD',
-    });
+  res.status(200).json({
+    error: false,
+    message: 'Bonjour, mon ami',
+  });
 });
-  
 
 // db connection
 mongoose.connect(process.env.DB_CONNECTION,
@@ -32,3 +20,5 @@ mongoose.connect(process.env.DB_CONNECTION,
 )
 
 app.listen(3000);
+
+module.exports = app;

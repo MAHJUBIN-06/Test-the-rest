@@ -1,7 +1,6 @@
-// const { json } = require("body-parser");
-const express = require("express");
+
 const request = require("supertest");
-const app = require('../app');
+const app = require('./app');
 
 
 describe('GET /', () => {
@@ -9,7 +8,7 @@ describe('GET /', () => {
     const response = await request(app).get('/');
 
     expect(response.status).toBe(200);
-    expect(response.body.message).toEqual('HELLO WORLD');
+    expect(response.body.message).toEqual('Bonjour, mon ami');
   });
 });
 
